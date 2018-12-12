@@ -66,6 +66,7 @@ DEPENDENCIES
   jeweler
   minitest (~> 5.5)
   mocha (~> 0.9)
+  rake (= 10.1.1)
   resque (~> 1.19)
 
 BUNDLED WITH
