@@ -36,11 +36,7 @@ Gem::Specification.new do |s|
     "lib/resque/server/views/statuses.erb",
     "lib/resque/status.rb",
     "lib/resque/status_server.rb",
-    "resque-status.gemspec",
-    "test/redis-test.conf",
-    "test/test_helper.rb",
-    "test/test_resque_plugins_status.rb",
-    "test/test_resque_plugins_status_hash.rb"
+    "resque-status.gemspec"
   ]
   s.homepage = "http://github.com/quirkey/resque-status".freeze
   s.rubyforge_project = "quirkey".freeze

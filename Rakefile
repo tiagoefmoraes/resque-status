@@ -16,6 +16,7 @@ begin
     gem.homepage = "http://github.com/quirkey/resque-status"
     gem.rubyforge_project = "quirkey"
     gem.authors = ["Aaron Quint"]
+    gem.files.exclude %w[.travis.yml test/*]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::RubygemsDotOrgTasks.new
