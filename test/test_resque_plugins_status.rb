@@ -4,7 +4,7 @@ class TestResquePluginsStatus < Minitest::Test
 
   describe "Resque::Plugins::Status" do
     before do
-      Resque.redis.flushall
+      Resque.redis.redis.flushall
     end
 
     describe ".create" do
@@ -57,7 +57,7 @@ class TestResquePluginsStatus < Minitest::Test
       end
 
       it "return nil" do
-        assert_equal nil, @res
+        assert_nil @res
       end
 
       it "not create a status" do

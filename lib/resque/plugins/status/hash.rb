@@ -14,7 +14,7 @@ module Resque
         def self.create(uuid, *messages)
           set(uuid, *messages)
           redis.zadd(set_key, Time.now.to_i, uuid)
-          redis.zremrangebyscore(set_key, 0, Time.now.to_i - @expire_in) if @expire_in
+          redis.zremrangebyscore(set_key, 0, Time.now.to_i - expire_in) if expire_in
           uuid
         end
 
@@ -150,7 +150,7 @@ module Resque
         # The time in seconds that jobs and statuses should expire from Redis (after
         # the last time they are touched/updated)
         def self.expire_in
-          @expire_in
+          @expire_in if defined? @expire_in
         end
 
         # Set the <tt>expire_in</tt> time in seconds
@@ -244,6 +244,7 @@ module Resque
 
         # Return the time of the status initialization. If set returns a <tt>Time</tt>
         # object, otherwise returns nil
+        undef :time
         def time
           time? ? Time.at(self['time']) : nil
         end
