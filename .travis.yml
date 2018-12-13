@@ -9,5 +9,6 @@ rvm:
 jdk:
   - openjdk8
 before_install:
+  - rm Gemfile.lock
   - gem update --system
   - gem --version
